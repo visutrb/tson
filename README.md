@@ -2,6 +2,7 @@
 
 >@vbs/tson is a library that makes JSON to TypeScript object conversion simpler. This library is heavily inspired by gson.
 
+[![Build Status](https://travis-ci.org/visutrb/tson.svg?branch=master)](https://travis-ci.org/visutrb/tson) [![codecov](https://codecov.io/gh/visutrb/tson/branch/master/graph/badge.svg)](https://codecov.io/gh/visutrb/tson)
 
 ## Install
 
