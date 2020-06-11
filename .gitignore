@@ -1,0 +1,10 @@
+.idea
+.vscode
+.nyc_output
+build
+coverage
+dist
+lib
+node_modules
+.DS_Store
+tjson-*.tgz

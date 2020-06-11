@@ -1,0 +1,68 @@
+{
+  "name": "@vsb/tson",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepublish-lib": "npm run build; cp -r build ./dist; cp package*.json ./dist",
+    "publish-lib": "npm pack ./dist",
+    "clean": "rm -rf build",
+    "clean-dist": "rm -rf dist",
+    "test": "nyc mocha test/**/*.spec.ts",
+    "report-coverage": "nyc report --reporter=json > coverage/coverage.json"
+  },
+  "keywords": [
+    "typescript",
+    "json",
+    "serializer",
+    "deserializer"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^8.10.61",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.3",
+    "nyc": "^15.1.0",
+    "reflect-metadata": "^0.1.0",
+    "semver": "^7.3.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.4.2"
+  },
+  "peerDependencies": {
+    "reflect-metadata": ">=0.1.0",
+    "typescript": ">=3.4.2"
+  },
+  "dependencies": {},
+  "publishConfig": {
+    "access": "public"
+  },
+  "mocha": {
+    "require": [
+      "ts-node/register"
+    ],
+    "file": [
+      "test/helpers/test-helper.ts"
+    ],
+    "timeout": "10000"
+  },
+  "nyc": {
+    "all": true,
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "test/*"
+    ],
+    "reporter": [
+      "text-summary",
+      "lcov"
+    ]
+  }
+}
