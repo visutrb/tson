@@ -80,8 +80,6 @@ describe("Serialization Test", () => {
     expect(keys).to.include("address_line1");
     expect(keys).to.include("address_line2");
     expect(keys).to.not.include("zip_code");
-
-    console.log(json);
   });
 
 });
