@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com:visutrb/tson"
+  },
   "scripts": {
     "build": "tsc",
     "prepublish-lib": "npm run build; cp -r build ./dist; cp package*.json ./dist",
