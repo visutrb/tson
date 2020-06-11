@@ -15,7 +15,7 @@ after_success:
   - codecov
 
 before_deploy:
-  - npm config set @vbs:registry https://registry.npmjs.com
+  - npm config set @vsb:registry https://registry.npmjs.com
   - npm run build
   - cp -r build dist
   - cp README.md ./dist/
