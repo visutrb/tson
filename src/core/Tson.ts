@@ -24,7 +24,7 @@ export class Tson {
 
       let deserializedValue: any;
       const value = json[serializedName];
-      if (!value) {
+      if (value === undefined || value === null) {
         deserializedValue = null;
       } else if (isSerializable) {
         deserializedValue = this.fromJson(value, propertyType);
@@ -59,7 +59,7 @@ export class Tson {
 
       let serializedValue: any;
       const value = Reflect.get(object, property);
-      if (!value) {
+      if (value === undefined || value === null) {
         continue;
       } else if (isPropertySerializable) {
         serializedValue = this.toJson(value);
