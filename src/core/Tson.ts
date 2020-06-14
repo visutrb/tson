@@ -20,7 +20,7 @@ export class Tson {
     for (const property of properties) {
       const propertyType = Reflect.getMetadata(Constants.META_SERIALIZED_PROPERTY_TYPE, instance, property);
       const serializedName = Reflect.getMetadata(Constants.META_SERIALIZED_NAME, instance, property);
-      const isSerializable = Reflect.hasMetadata(Constants.META_SERIALIZABLE, propertyType);
+      const isSerializable = propertyType ? Reflect.hasMetadata(Constants.META_SERIALIZABLE, propertyType) : false;
 
       let deserializedValue: any;
       const value = json[serializedName];
