@@ -19,6 +19,6 @@ export class Article {
   @SerializedProperty("published_at")
   publishedAt: Date;
 
-  @SerializedProperty("strings")
-  randomStrings: string[];
+  @SerializedProperty()
+  comments: string[];
 }
