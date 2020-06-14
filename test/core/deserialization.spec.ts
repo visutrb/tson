@@ -117,7 +117,7 @@ describe("Deserialization Test", () => {
   });
 
   it("should construct instance of Article class", () => {
-    const json = { id: 1, title: "Foo", content: "Bar", published_at: "1970-01-01T00:00:00.000Z", strings: ["foo", "bar"] };
+    const json = { id: 1, title: "Foo", content: "Bar", published_at: "1970-01-01T00:00:00.000Z", comments: ["foo", "bar"] };
 
     const article = tson.fromJson(json, Article);
     expect(article).to.be.instanceOf(Article);
@@ -135,8 +135,8 @@ describe("Deserialization Test", () => {
     expect(article.author).to.be.null;
     expect(article.publishedAt.getTime()).to.equal(0);
 
-    expect(article.randomStrings).to.contain("foo");
-    expect(article.randomStrings).to.contain("bar");
+    expect(article.comments).to.contain("foo");
+    expect(article.comments).to.contain("bar");
   });
 
   it("should construct instance of Article class with author property", () => {
